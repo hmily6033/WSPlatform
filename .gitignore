@@ -26,3 +26,9 @@
 *.exe
 *.out
 *.app
+
+/obj/
+/bin/
+*.DotSettings.user
+.Publish.xml
+/packages/
