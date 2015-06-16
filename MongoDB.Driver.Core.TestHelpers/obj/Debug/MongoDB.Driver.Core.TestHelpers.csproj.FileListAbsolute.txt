@@ -1,0 +1,15 @@
+E:\mongoDB\mongo-csharp-driver\src\MongoDB.Driver.Core.TestHelpers\obj\Debug\ResolveAssemblyReference.cache
+E:\mongoDB\mongo-csharp-driver\src\MongoDB.Driver.Core.TestHelpers\obj\Debug\MongoDB.Driver.Core.TestHelpers.csprojResolveAssemblyReference.cache
+D:\wsplatform\MongoDB.Driver.Core.TestHelpers\obj\Debug\MongoDB.Driver.Core.TestHelpers.csprojResolveAssemblyReference.cache
+D:\wsplatform\MongoDB.Driver.Core.TestHelpers\bin\Debug\MongoDB.Driver.Core.TestHelpers.dll
+D:\wsplatform\MongoDB.Driver.Core.TestHelpers\bin\Debug\MongoDB.Driver.Core.TestHelpers.pdb
+D:\wsplatform\MongoDB.Driver.Core.TestHelpers\bin\Debug\MongoDB.Bson.dll
+D:\wsplatform\MongoDB.Driver.Core.TestHelpers\bin\Debug\MongoDB.Driver.Core.dll
+D:\wsplatform\MongoDB.Driver.Core.TestHelpers\bin\Debug\nunit.framework.dll
+D:\wsplatform\MongoDB.Driver.Core.TestHelpers\bin\Debug\MongoDB.Bson.pdb
+D:\wsplatform\MongoDB.Driver.Core.TestHelpers\bin\Debug\MongoDB.Bson.xml
+D:\wsplatform\MongoDB.Driver.Core.TestHelpers\bin\Debug\MongoDB.Driver.Core.pdb
+D:\wsplatform\MongoDB.Driver.Core.TestHelpers\bin\Debug\MongoDB.Driver.Core.xml
+D:\wsplatform\MongoDB.Driver.Core.TestHelpers\bin\Debug\nunit.framework.xml
+D:\wsplatform\MongoDB.Driver.Core.TestHelpers\obj\Debug\MongoDB.Driver.Core.TestHelpers.dll
+D:\wsplatform\MongoDB.Driver.Core.TestHelpers\obj\Debug\MongoDB.Driver.Core.TestHelpers.pdb
