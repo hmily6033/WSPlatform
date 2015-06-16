@@ -39,7 +39,12 @@ namespace ws.WSInit
             MongoDbServer = client.GetServer();
             MongoDatabase db = MongoDbServer.GetDatabase(WSAppConfig.WSAppConfig.GetConnectionProviderName("ws"));
             //获取Users集合  
-            MongoCollection col = db.GetCollection("student");
+            MongoCollection col = db.GetCollection("DocumentType");
+
+            BsonDocument bd = new BsonDocument();
+            bd.Add("DocumentId", DocumentId.GetId());
+            bd.Add("DocumentTypeId", DocumentId.GetId());
+            col.Insert(bd);
             //查询全部集合里的数据  
             var result1 = col.FindAllAs<BsonDocument>().ToList();
             List<BsonValue> listBsonValue = new List<BsonValue>() {1};
