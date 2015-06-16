@@ -1,3 +1,4 @@
+.GITIGNORE
 # Compiled Object files
 *.slo
 *.lo
