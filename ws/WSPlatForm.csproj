@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WSCommon\WSCollection.cs" />
+    <Compile Include="WSCommon\WSDocument.cs" />
+    <Compile Include="WSCommon\WSDocumentId.cs" />
     <Compile Include="WSDocument\DocumentId.cs" />
     <Compile Include="WSAppConfig\WSAppConfig.cs" />
     <Compile Include="WSInit\WSMongdbInit.cs" />

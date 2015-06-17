@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using MongoDB.Driver.Core;
 using MongoDB.Driver.Builders;
 using ws.WSDocument;
+using ws.WSCommon;
 
 namespace ws.WSInit
 {
@@ -15,8 +16,9 @@ namespace ws.WSInit
     public class WSMongdbInit
     {
 
-        private MongoServer MongoDbServer{get;set;}
-
+        protected MongoServer MongoDbServer{get;set;}
+        protected MongoDatabase MongoDb { get; set; }
+        protected MongoCollection DocumentTypeCollection { get; set; }
         #region 数据库连接说明
         //数据库连接
         //要建立数据库连接，就一定要知道服务器的地址、端口等信息。所有的这些信息，我们都使用连接字符串表示。MongoDB的连接字符串格式如下：
@@ -37,24 +39,37 @@ namespace ws.WSInit
             MongoClient client = new MongoClient(WSAppConfig.WSAppConfig.GetConnectionStringsConfig("ws"));
             var serverSettings = MongoServerSettings.FromClientSettings(client.Settings);
             MongoDbServer = client.GetServer();
-            MongoDatabase db = MongoDbServer.GetDatabase(WSAppConfig.WSAppConfig.GetConnectionProviderName("ws"));
-            //获取Users集合  
-            MongoCollection col = db.GetCollection("DocumentType");
+            MongoDb = MongoDbServer.GetDatabase(WSAppConfig.WSAppConfig.GetConnectionProviderName("ws"));
+            DocumentTypeCollection = MongoDb.GetCollection("DocumentType");
+            ////获取Users集合  
+            //MongoCollection col = db.GetCollection("DocumentType");
+            
+            //BsonDocument bd = new BsonDocument();
+            //bd.Add("DocumentId", DocumentId.GetId());
+            //bd.Add("DocumentTypeId", DocumentId.GetId());
+            //col.Insert(bd);
+            ////查询全部集合里的数据  
+            //var result1 = col.FindAllAs<BsonDocument>().ToList();
+            //List<BsonValue> listBsonValue = new List<BsonValue>() {1};
 
-            BsonDocument bd = new BsonDocument();
-            bd.Add("DocumentId", DocumentId.GetId());
-            bd.Add("DocumentTypeId", DocumentId.GetId());
-            col.Insert(bd);
-            //查询全部集合里的数据  
-            var result1 = col.FindAllAs<BsonDocument>().ToList();
-            List<BsonValue> listBsonValue = new List<BsonValue>() {1};
+            //var result2 = col.FindAs<BsonDocument>(Query.In("age", listBsonValue)).ToList();
 
-            var result2 = col.FindAs<BsonDocument>(Query.In("age", listBsonValue)).ToList();
-
-            string aa = DocumentId.GetId();
-            StringBuilder sb = new StringBuilder("");
+            //string aa = DocumentId.GetId();
+            //StringBuilder sb = new StringBuilder("");
         }
 
+        public WSCollection GetCollectionById(string Id)
+        {
+            WSCollection wscol = new WSCollection();
+            BsonDocument bd = DocumentTypeCollection.FindOneAs<BsonDocument>(Query.EQ("_id", WSDocumentId.DocumentId));
+            string dbname = bd.GetValue("documentdataname").ToString();
+            MongoCollection col = MongoDb.GetCollection(dbname);
+            foreach(BsonDocument b in col.FindAllAs<BsonDocument>())
+            {
+                wscol.
+            }
+            return wscol;
+        }
 
         
     }
